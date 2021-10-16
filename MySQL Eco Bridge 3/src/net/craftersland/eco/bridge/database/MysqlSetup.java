@@ -29,7 +29,6 @@ public class MysqlSetup {
 		Eco.log.info("Connecting to the database...");
 		try {
        	 	//Load Drivers
-            Class.forName("com.mysql.jdbc.Driver");
             Properties properties = new Properties();
             properties.setProperty("user", eco.getConfigHandler().getString("database.mysql.user"));
             properties.setProperty("password", eco.getConfigHandler().getString("database.mysql.password"));
@@ -40,10 +39,6 @@ public class MysqlSetup {
             
             //Connect to database
             conn = DriverManager.getConnection("jdbc:mysql://" + eco.getConfigHandler().getString("database.mysql.host") + ":" + eco.getConfigHandler().getString("database.mysql.port") + "/" + eco.getConfigHandler().getString("database.mysql.databaseName"), properties);
-           
-          } catch (ClassNotFoundException e) {
-        	  Eco.log.severe("Could not locate drivers for mysql! Error: " + e.getMessage());
-            return;
           } catch (SQLException e) {
         	  Eco.log.severe("Could not connect to mysql database! Error: " + e.getMessage());
             return;

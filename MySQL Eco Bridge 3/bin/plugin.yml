@@ -1,6 +1,7 @@
 name: MysqlEcoBridge
 main: net.craftersland.eco.bridge.Eco
-version: 3.4.1
+api-version: 1.16
+version: 3.4.2
 depend: [Vault]
 website: www.craftersland.net
 load: STARTUP
