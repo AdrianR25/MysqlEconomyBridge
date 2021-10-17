@@ -99,7 +99,6 @@ public class MysqlSetup {
 			
 		    start = System.currentTimeMillis();
 		    Eco.log.info("Attempting to establish a connection to the MySQL server!");
-            Class.forName("com.mysql.jdbc.Driver");
             Properties properties = new Properties();
             properties.setProperty("user", eco.getConfigHandler().getString("database.mysql.user"));
             properties.setProperty("password", eco.getConfigHandler().getString("database.mysql.password"));
